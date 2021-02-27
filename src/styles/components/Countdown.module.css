@@ -64,6 +64,11 @@
   background: var(--blue-dark);
 }
 
+.countdownButton img {
+  margin-left: 0.75rem;
+  font-size: 0px;
+}
+
 .countdownButtonActive {
   background: var(--white);
   color: var(--title);

@@ -16,3 +16,15 @@
   gap: 6.25rem;
   align-content: center;
 }
+
+@media (min-width: 768px) {
+  .container {
+    height: 100vh;
+    max-width: 800px;
+    padding: 0.75rem 2rem;
+  }
+
+  .container section {
+    margin-top: 1.4rem;
+  }
+}

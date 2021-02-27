@@ -50,7 +50,7 @@ export function Countdown() {
               className={styles.countdownButton}
               onClick={startCountdown}
             >
-              Iniciar um ciclo
+              Iniciar um ciclo <img src='/icons/start-cicle.svg' alt='Icon' />
             </button>
           )}
         </>
