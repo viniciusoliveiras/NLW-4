@@ -28,7 +28,7 @@
   margin-right: 0.5rem;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 670px) {
   .profileContainer {
     padding-top: 1rem;
   }

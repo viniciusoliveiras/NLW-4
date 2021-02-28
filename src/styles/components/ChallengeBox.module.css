@@ -109,7 +109,7 @@
   filter: brightness(0.9);
 }
 
-@media (max-width: 425px) {
+@media (max-width: 670px) {
   .challengeActive main img {
     margin-top: 1rem;
   }

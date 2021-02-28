@@ -29,7 +29,7 @@ span.currentExperience {
   width: 4rem;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 670px) {
   span.currentExperience {
     transform: translateX(-35%);
   }

@@ -30,7 +30,7 @@
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 670px) {
   .container {
     height: 120vh;
     max-width: 420px;
