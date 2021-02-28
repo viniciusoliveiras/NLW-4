@@ -26,4 +26,17 @@ span.currentExperience {
   position: absolute;
   top: 12px;
   transform: translateX(-50%);
+  width: 4rem;
+}
+
+@media (max-width: 425px) {
+  span.currentExperience {
+    transform: translateX(-35%);
+  }
+}
+
+@media (max-width: 375px) {
+  span.currentExperience {
+    transform: translateX(-50%);
+  }
 }
