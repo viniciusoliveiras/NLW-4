@@ -19,21 +19,18 @@
 
 @media (max-width: 768px) {
   .container {
-    height: 105vh;
     max-width: 800px;
     padding: 0.75rem 2rem;
   }
 
   .container section {
     grid-template-columns: 1fr;
-    margin-top: 1.4rem;
   }
 }
 
 @media (max-width: 670px) {
   .container {
-    height: 120vh;
-    max-width: 420px;
+    max-width: 670px;
     padding: 1rem 2rem;
   }
 
@@ -45,7 +42,6 @@
 
 @media (max-width: 320px) {
   .container {
-    height: 120vh;
     max-width: 320px;
     padding: 1rem 1rem;
   }
