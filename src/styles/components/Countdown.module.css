@@ -64,6 +64,11 @@
   background: var(--blue-dark);
 }
 
+.countdownButton > i {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
 .countdownButton img {
   margin-left: 0.75rem;
   font-size: 0px;
@@ -86,6 +91,6 @@
   border-bottom: 5px solid var(--green);
 }
 
-.countdownButton:disabled img {
-  margin-left: 0.75rem;
+.countdownButton:disabled i {
+  color: var(--green);
 }
