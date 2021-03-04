@@ -3,9 +3,6 @@ import Cookies from 'js-cookie';
 
 import styles from '../styles/components/DarkModeToggler.module.css';
 import { ChallengesContext } from '../contexts/ChallengesContext';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 const lightTheme = {
   '--white': '#fff',
@@ -70,9 +67,17 @@ export function DarkModeToggler() {
     <div onClick={toggleTheme} className={styles.decorationSlash}>
       <div>
         {isChecked ? (
-          <img src="/icons/moon-regular.svg" className={styles.moon} alt="Moon"/>
+          <img
+            src='/icons/moon-regular.svg'
+            className={styles.moon}
+            alt='Moon'
+          />
         ) : (
-          <img src="/icons/lightbulb-regular.svg" className={styles.lightBall} alt="Light Ball"/>
+          <img
+            src='/icons/lightbulb-regular.svg'
+            className={styles.lightBall}
+            alt='Light Ball'
+          />
         )}
       </div>
     </div>
