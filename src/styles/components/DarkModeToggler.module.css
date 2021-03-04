@@ -17,6 +17,7 @@
 .decorationSlash:hover {
   transform: scale(1.2);
   cursor: pointer;
+  background: var(--blue-dark);
 }
 
 .decorationSlash:hover img {
