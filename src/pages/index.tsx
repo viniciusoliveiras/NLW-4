@@ -11,6 +11,7 @@ import { ChallengeBox } from '../components/ChallengeBox';
 import { CountdownProvider } from '../contexts/CountdownContext';
 import React from 'react';
 import { ChallengesProvider } from '../contexts/ChallengesContext';
+import { DarkModeToggler } from '../components/DarkModeToggler';
 
 interface HomeProps {
   level: number;
@@ -33,6 +34,8 @@ export default function Home(props) {
         </Head>
 
         <ExperienceBar />
+
+        <DarkModeToggler />
 
         <CountdownProvider>
           <section>

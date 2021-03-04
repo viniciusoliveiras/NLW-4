@@ -1,0 +1,34 @@
+.decorationSlash {
+  width: 4.5rem;
+  height: 4.5rem;
+
+  border-radius: 4.5rem;
+
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorationSlash:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.decorationSlash:hover img {
+  transform: scale(1.2);
+  animation: icon-move 1000ms ease;
+}
+
+.decorationSlash img.moon {
+  width: 2rem;
+}
+
+.decorationSlash img.lightBall {
+  width: 1.5rem;
+}
+
