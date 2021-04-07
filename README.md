@@ -21,6 +21,17 @@
 <h4 align="center"> 
 	🚧  Concluído 🚀   🚧
 </h4>
+<br>
+
+<p align="center">
+  <img alt="Dark mode" src=".github/moveit-light.png" width="50%">
+</p>
+
+<br>
+
+<p align="center">
+  <img alt="Light mode" src=".github/moveit-dark.png" width="50%">
+</p>
 
 <br>
 
