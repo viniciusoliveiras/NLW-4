@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import Cookies from 'js-cookie';
+import Switch from 'react-switch';
 
 import styles from '../styles/components/DarkModeToggler.module.css';
 import { ChallengesContext } from '../contexts/ChallengesContext';
@@ -64,22 +65,20 @@ export function DarkModeToggler() {
   }
 
   return (
-    <div onClick={toggleTheme} className={styles.decorationSlash}>
-      <div>
-        {isChecked ? (
-          <img
-            src='/icons/moon-regular.svg'
-            className={styles.moon}
-            alt='Moon'
-          />
-        ) : (
-          <img
-            src='/icons/lightbulb-regular.svg'
-            className={styles.lightBall}
-            alt='Light Ball'
-          />
-        )}
-      </div>
+    <div className={styles.decorationSlash}>
+      <Switch
+        onChange={toggleTheme}
+        checked={isChecked}
+        onColor='#D69524'
+        onHandleColor='#ffad1f'
+        handleDiameter={30}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        boxShadow='0px 1px 5px rgba(0, 0, 0, 0.6)'
+        activeBoxShadow='0px 0px 1px 10px rgba(0, 0, 0, 0.2)'
+        className='react-switch'
+        id='material-switch'
+      />
     </div>
   );
 }
