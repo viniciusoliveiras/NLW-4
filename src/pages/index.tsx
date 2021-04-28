@@ -29,7 +29,6 @@ export default function Login() {
       setUserIRLName(data.name || data.login);
 
       router.push('/home');
-      setIsLoading(false);
     } catch {
       setIsLoading(false);
       setUsername('');
