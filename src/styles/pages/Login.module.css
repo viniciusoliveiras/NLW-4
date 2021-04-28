@@ -37,6 +37,11 @@
   align-items: center;
 }
 
+.form input:hover,
+.form input:focus {
+  outline: 3px solid #414aa3;
+}
+
 .form input {
   height: 5rem;
 
