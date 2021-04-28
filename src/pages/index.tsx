@@ -1,67 +1,107 @@
 import Head from 'next/head';
-import { GetServerSideProps } from 'next';
+import { FormEvent, useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
+import { toast, Zoom } from 'react-toastify';
+import { useRouter } from 'next/router';
+import Loader from 'react-loader-spinner';
 
-import { CompletedChallenges } from '../components/CompletedChallenges';
-import { Countdown } from '../components/Countdown';
-import { ExperienceBar } from '../components/ExperienceBar';
-import { Profile } from '../components/Profile';
+import { api } from '../services/api';
 
-import styles from '../styles/pages/Home.module.css';
-import { ChallengeBox } from '../components/ChallengeBox';
-import { CountdownProvider } from '../contexts/CountdownContext';
-import React from 'react';
-import { ChallengesProvider } from '../contexts/ChallengesContext';
-import { DarkModeToggler } from '../components/DarkModeToggler';
+import styles from '../styles/pages/Login.module.css';
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  challengesCompleted: number;
-}
+export default function Login() {
+  const [username, setUsername] = useState('');
+  const [userAvatar, setUserAvatar] = useState('');
+  const [userIRLName, setUserIRLName] = useState('');
 
-export default function Home(props) {
-  console.log(props);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
+
+  async function handleUserSubmit(event: FormEvent) {
+    event.preventDefault();
+
+    try {
+      setIsLoading(true);
+      const { data } = await api.get(`${username}`);
+
+      setUserAvatar(data.avatar_url);
+      setUserIRLName(data.name || data.login);
+
+      router.push('/home');
+      setIsLoading(false);
+    } catch {
+      setIsLoading(false);
+      setUsername('');
+      toast.error('Usuário não encontrado no Github', {
+        position: 'top-right',
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        transition: Zoom,
+      });
+    }
+  }
+
+  useEffect(() => {
+    Cookies.set('avatar', String(userAvatar));
+    Cookies.set('name', String(userIRLName));
+  }, [userAvatar, userIRLName]);
 
   return (
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      challengesCompleted={props.challengesCompleted}
-    >
+    <>
+      <Head>
+        <title>Login | move.it</title>
+      </Head>
+
       <div className={styles.container}>
-        <Head>
-          <title>Início | move.it</title>
-        </Head>
+        <div className={styles.loginContainer}>
+          <img src='/logo-login.svg' alt='move.it' />
 
-        <ExperienceBar />
+          <p>Bem-vindo</p>
 
-        <DarkModeToggler />
+          <div className={styles.github}>
+            <img src='/github-logo.svg' alt='github' />
+            <span>
+              Faça login com seu Github
+              <br /> para começar
+            </span>
+          </div>
 
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
+          <form className={styles.form} onSubmit={handleUserSubmit}>
+            <input
+              type='text'
+              name='username'
+              placeholder='Digite seu username'
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+              required
+            />
+            {!username && (
+              <button type='submit' className={styles.notActiveButton}>
+                {isLoading ? (
+                  <Loader type='Oval' color='#FFF' height={35} width={35} />
+                ) : (
+                  <i className='fas fa-arrow-right fa-lg'></i>
+                )}
+              </button>
+            )}
+
+            {username && (
+              <button type='submit' className={styles.activeButton}>
+                {isLoading ? (
+                  <Loader type='Oval' color='#FFF' height={35} width={35} />
+                ) : (
+                  <i className='fas fa-arrow-right fa-lg'></i>
+                )}
+              </button>
+            )}
+          </form>
+        </div>
       </div>
-    </ChallengesProvider>
+    </>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, challengesCompleted } = ctx.req.cookies;
-
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      challengesCompleted: Number(challengesCompleted),
-    },
-  };
-};

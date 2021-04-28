@@ -1,0 +1,86 @@
+.container {
+  height: 100vh;
+  background-image: url('/login-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: 'center';
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.loginContainer {
+  margin-right: 10rem;
+}
+
+.loginContainer p {
+  font-weight: 600;
+  font-size: 2.25rem;
+  color: var(--white);
+  margin-top: 7rem;
+}
+
+.github {
+  margin-top: 2.125rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.github span {
+  color: #b2b9ff;
+  margin-left: 1.5rem;
+}
+
+.form {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.form input:hover,
+.form input:focus {
+  outline: 3px solid #414aa3;
+}
+
+.form input {
+  height: 5rem;
+
+  border: 0;
+  background: linear-gradient(90deg, #4953b8 0%, rgba(73, 83, 184, 0.2) 100%);
+  border-radius: 5px 0px 0px 5px;
+  font-size: 1rem;
+  line-height: 2.125rem;
+
+  padding-left: 1.8rem;
+
+  color: var(--white);
+}
+
+.form input::placeholder {
+  font-size: 1rem;
+  line-height: 2.125rem;
+
+  /* padding-left: 1.8rem; */
+
+  color: #b3b9ff;
+}
+
+.form button.notActiveButton {
+  height: 5rem;
+  width: 5rem;
+  background-color: var(--blue-dark);
+  border: 0;
+  color: var(--white);
+  border-radius: 0px 5px 5px 0px;
+}
+
+.form button.activeButton {
+  height: 5rem;
+  width: 5rem;
+  background-color: var(--blue-dark);
+  border: 0;
+  background-color: var(--green);
+  color: var(--white);
+  margin: 0;
+  padding: 0;
+}
