@@ -24,13 +24,13 @@
 <br>
 
 <p align="center">
-  <img alt="Dark mode" src=".github/moveit-light.png" width="50%">
+  <img alt="Dark mode" src=".github/lightmode.png" width="50%">
 </p>
 
 <br>
 
 <p align="center">
-  <img alt="Light mode" src=".github/moveit-dark.png" width="50%">
+  <img alt="Light mode" src=".github/darkmode.png" width="50%">
 </p>
 
 <br>
