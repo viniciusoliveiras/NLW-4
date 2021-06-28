@@ -13,7 +13,7 @@
   <a href="#-tecnologias">Tecnologias</a> •
   <a href="#-projeto">Projeto</a> •
   <a href="#-layout">Layout</a> •
-  <a href="#-como-acessar"> •
+  <a href="#-como-acessar">Como acessar</a>•
   <a href="#-autor">Autor</a> •
   <a href="#-licença">Licença</a>
 </p>
